@@ -1,0 +1,2659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Barbie Math World</title>
+
+<style>
+
+/* =====================================================
+   BARBIE MATH WORLD
+   GOOGLE SITES - CSS INTERACTIVE VERSION
+===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    background: #fff3f9;
+
+    color: #5c2947;
+}
+
+.page {
+    width: 100%;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff8fc,
+            #ffe0ef
+        );
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navbar {
+
+    position: sticky;
+    top: 0;
+
+    z-index: 999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    padding: 13px;
+
+    background:
+        rgba(255,255,255,0.97);
+
+    border-bottom:
+        3px solid #ffb5d6;
+
+    box-shadow:
+        0 5px 18px
+        rgba(190,40,110,0.12);
+}
+
+.navbar a {
+
+    text-decoration: none;
+
+    color: #c51c70;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    padding:
+        9px 14px;
+
+    border-radius: 25px;
+
+    transition: 0.3s;
+
+}
+
+.navbar a:hover {
+
+    background:
+        #ff4fa3;
+
+    color: white;
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+/* =====================================================
+   FLOATING DECORATIONS
+===================================================== */
+
+.float {
+
+    position: absolute;
+
+    font-size: 30px;
+
+    pointer-events: none;
+
+    animation:
+        floatUp 5s
+        ease-in-out
+        infinite;
+
+}
+
+.heart1 {
+    left: 3%;
+    top: 18%;
+}
+
+.star1 {
+    right: 4%;
+    top: 27%;
+
+    animation-delay: 1s;
+}
+
+.plus1 {
+    left: 5%;
+    top: 65%;
+
+    color: #ff4fa3;
+
+    animation-delay: 2s;
+}
+
+.star2 {
+    right: 5%;
+    bottom: 20%;
+
+    animation-delay: 3s;
+}
+
+@keyframes floatUp {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translateY(-22px)
+            rotate(8deg);
+    }
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    position: relative;
+
+    max-width: 1100px;
+
+    min-height: 500px;
+
+    margin:
+        20px auto;
+
+    padding:
+        55px 20px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    text-align:
+        center;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        40px;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(255,255,255,.4),
+            transparent 12%
+        ),
+
+        radial-gradient(
+            circle at 90% 70%,
+            rgba(255,255,255,.3),
+            transparent 15%
+        ),
+
+        linear-gradient(
+            135deg,
+            #ed2785,
+            #ff65ae,
+            #ffb9db
+        );
+
+    box-shadow:
+        0 20px 45px
+        rgba(195,30,110,.25);
+
+}
+
+
+/* =====================================================
+   HERO CIRCLES
+===================================================== */
+
+.hero:before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.17);
+
+    top: -80px;
+    left: -70px;
+
+}
+
+.hero:after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.13);
+
+    right: -100px;
+    bottom: -100px;
+
+}
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.bow {
+
+    position: relative;
+
+    z-index: 5;
+
+    font-size: 65px;
+
+    animation:
+        bounce 2s
+        ease-in-out
+        infinite;
+
+}
+
+@keyframes bounce {
+
+    0%,100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-12px);
+    }
+
+}
+
+
+.hero h1 {
+
+    position: relative;
+
+    z-index: 5;
+
+    color: white;
+
+    font-size:
+        clamp(
+            38px,
+            8vw,
+            75px
+        );
+
+    margin-top: 10px;
+
+    text-shadow:
+        4px 4px #c3176b,
+        7px 7px
+        rgba(255,255,255,.2);
+
+}
+
+.hero h2 {
+
+    position: relative;
+
+    z-index: 5;
+
+    color: white;
+
+    font-size:
+        clamp(
+            20px,
+            4vw,
+            32px
+        );
+
+    margin-top: 12px;
+
+}
+
+.hero p {
+
+    position: relative;
+
+    z-index: 5;
+
+    color: white;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin-top: 15px;
+
+}
+
+
+/* =====================================================
+   FLOATING NUMBERS
+===================================================== */
+
+.number {
+
+    position: absolute;
+
+    color:
+        rgba(255,255,255,.7);
+
+    font-size: 42px;
+
+    font-weight: bold;
+
+    animation:
+        numberFloat
+        5s
+        infinite
+        ease-in-out;
+
+}
+
+.num1 {
+    left: 12%;
+    top: 20%;
+}
+
+.num2 {
+    right: 12%;
+    top: 25%;
+
+    animation-delay: 1s;
+}
+
+.num3 {
+    left: 18%;
+    bottom: 20%;
+
+    animation-delay: 2s;
+}
+
+.num4 {
+    right: 18%;
+    bottom: 17%;
+
+    animation-delay: 3s;
+}
+
+@keyframes numberFloat {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(0);
+    }
+
+    50% {
+        transform:
+            translateY(-20px)
+            rotate(12deg);
+    }
+
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.btn {
+
+    display:
+        inline-block;
+
+    padding:
+        14px 25px;
+
+    margin:
+        8px 5px;
+
+    border-radius:
+        30px;
+
+    text-decoration:
+        none;
+
+    font-weight:
+        bold;
+
+    color:
+        #d32178;
+
+    background:
+        white;
+
+    box-shadow:
+        0 7px 18px
+        rgba(150,20,90,.2);
+
+    transition:
+        .3s;
+
+}
+
+.btn:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.04);
+
+    box-shadow:
+        0 12px 22px
+        rgba(150,20,90,.25);
+
+}
+
+.pink {
+    background: #ed3c91;
+    color: white;
+}
+
+.purple {
+    background: #a466e5;
+    color: white;
+}
+
+.blue {
+    background: #31b9e5;
+    color: white;
+}
+
+.gold {
+    background: #ffb83e;
+    color: white;
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+section {
+
+    max-width:
+        1050px;
+
+    margin:
+        auto;
+
+    padding:
+        60px 20px;
+
+}
+
+.section-title {
+
+    text-align:
+        center;
+
+    color:
+        #c71e70;
+
+    font-size:
+        clamp(
+            28px,
+            5vw,
+            42px
+        );
+
+    margin-bottom:
+        12px;
+
+}
+
+.subtitle {
+
+    text-align:
+        center;
+
+    color:
+        #805269;
+
+    font-size:
+        17px;
+
+    margin-bottom:
+        30px;
+
+}
+
+
+/* =====================================================
+   WELCOME
+===================================================== */
+
+.white-box {
+
+    background:
+        white;
+
+    border:
+        4px solid #ffc3df;
+
+    border-radius:
+        32px;
+
+    padding:
+        35px;
+
+    text-align:
+        center;
+
+    box-shadow:
+        0 10px 28px
+        rgba(190,40,110,.12);
+
+}
+
+.white-box p {
+
+    font-size:
+        18px;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* =====================================================
+   ADDITION EXAMPLE
+===================================================== */
+
+.example {
+
+    max-width:
+        650px;
+
+    margin:
+        30px auto;
+
+    padding:
+        30px;
+
+    text-align:
+        center;
+
+    background:
+        #fff0f7;
+
+    border:
+        3px dashed #ff63a9;
+
+    border-radius:
+        30px;
+
+}
+
+.equation {
+
+    font-size:
+        clamp(
+            40px,
+            8vw,
+            65px
+        );
+
+    font-weight:
+        bold;
+
+    color:
+        #d52479;
+
+    margin:
+        15px 0;
+
+}
+
+.objects {
+
+    font-size:
+        32px;
+
+}
+
+
+/* =====================================================
+   LEARNING CARDS
+===================================================== */
+
+.cards {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                210px,
+                1fr
+            )
+        );
+
+    gap:
+        20px;
+
+}
+
+.card {
+
+    background:
+        white;
+
+    border:
+        3px solid #ffd0e5;
+
+    border-radius:
+        28px;
+
+    padding:
+        28px 20px;
+
+    text-align:
+        center;
+
+    box-shadow:
+        0 9px 22px
+        rgba(190,40,110,.1);
+
+    transition:
+        .3s;
+
+}
+
+.card:hover {
+
+    transform:
+        translateY(-10px);
+
+    border-color:
+        #ff5ca7;
+
+}
+
+.icon {
+
+    font-size:
+        50px;
+
+    margin-bottom:
+        10px;
+
+}
+
+.card h3 {
+
+    color:
+        #d52479;
+
+    margin-bottom:
+        10px;
+
+}
+
+.card p {
+
+    color:
+        #76546a;
+
+    line-height:
+        1.5;
+
+}
+
+
+/* =====================================================
+   LEARN STEPS
+===================================================== */
+
+.steps {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                220px,
+                1fr
+            )
+        );
+
+    gap:
+        20px;
+
+}
+
+.step {
+
+    background:
+        white;
+
+    border-radius:
+        25px;
+
+    padding:
+        25px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(190,40,110,.1);
+
+    border-left:
+        8px solid #ff5ca7;
+
+}
+
+.step-number {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width:
+        45px;
+
+    height:
+        45px;
+
+    border-radius:
+        50%;
+
+    background:
+        #ff5ca7;
+
+    color:
+        white;
+
+    font-weight:
+        bold;
+
+    margin-bottom:
+        12px;
+
+}
+
+.step h3 {
+
+    color:
+        #d52479;
+
+    margin-bottom:
+        8px;
+
+}
+
+.step p {
+
+    line-height:
+        1.6;
+
+}
+
+
+/* =====================================================
+   PRACTICE QUESTIONS
+===================================================== */
+
+.question {
+
+    background:
+        white;
+
+    border:
+        3px solid #ffd0e5;
+
+    border-radius:
+        30px;
+
+    padding:
+        30px;
+
+    margin-bottom:
+        25px;
+
+    text-align:
+        center;
+
+    box-shadow:
+        0 8px 20px
+        rgba(190,40,110,.1);
+
+}
+
+.question h3 {
+
+    color:
+        #a35bd9;
+
+    margin-bottom:
+        10px;
+
+}
+
+.question-text {
+
+    font-size:
+        38px;
+
+    font-weight:
+        bold;
+
+    color:
+        #d52479;
+
+    margin:
+        15px;
+
+}
+
+.answer-buttons {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        10px;
+
+}
+
+.answer-buttons a {
+
+    text-decoration:
+        none;
+
+    background:
+        #ffe0ef;
+
+    color:
+        #bd216c;
+
+    padding:
+        13px 25px;
+
+    border-radius:
+        25px;
+
+    font-weight:
+        bold;
+
+    transition:
+        .3s;
+
+}
+
+.answer-buttons a:hover {
+
+    background:
+        #ff5ca7;
+
+    color:
+        white;
+
+    transform:
+        scale(1.05);
+
+}
+
+
+/* =====================================================
+   CSS FEEDBACK
+===================================================== */
+
+/*
+   When the user clicks an answer,
+   the browser goes to the feedback target.
+*/
+
+.feedback {
+
+    display:
+        none;
+
+    margin-top:
+        15px;
+
+    padding:
+        15px;
+
+    border-radius:
+        20px;
+
+    font-weight:
+        bold;
+
+}
+
+
+/* Question 1 */
+
+#q1correct:target {
+
+    display:
+        block;
+
+    background:
+        #d9f8e6;
+
+    color:
+        #16834c;
+
+}
+
+#q1wrong:target {
+
+    display:
+        block;
+
+    background:
+        #ffe1ed;
+
+    color:
+        #c5296d;
+
+}
+
+
+/* Question 2 */
+
+#q2correct:target {
+
+    display:
+        block;
+
+    background:
+        #d9f8e6;
+
+    color:
+        #16834c;
+
+}
+
+#q2wrong:target {
+
+    display:
+        block;
+
+    background:
+        #ffe1ed;
+
+    color:
+        #c5296d;
+
+}
+
+
+/* Question 3 */
+
+#q3correct:target {
+
+    display:
+        block;
+
+    background:
+        #d9f8e6;
+
+    color:
+        #16834c;
+
+}
+
+#q3wrong:target {
+
+    display:
+        block;
+
+    background:
+        #ffe1ed;
+
+    color:
+        #c5296d;
+
+}
+
+
+/* =====================================================
+   PLAY GAME
+===================================================== */
+
+.game {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4fa3,
+            #a466e5
+        );
+
+    color:
+        white;
+
+    border-radius:
+        35px;
+
+    padding:
+        40px 25px;
+
+    text-align:
+        center;
+
+    box-shadow:
+        0 15px 30px
+        rgba(160,40,120,.2);
+
+}
+
+.game h3 {
+
+    font-size:
+        30px;
+
+    margin-bottom:
+        12px;
+
+}
+
+.game-question {
+
+    max-width:
+        400px;
+
+    margin:
+        25px auto;
+
+    background:
+        white;
+
+    color:
+        #d52479;
+
+    padding:
+        25px;
+
+    border-radius:
+        25px;
+
+    font-size:
+        38px;
+
+    font-weight:
+        bold;
+
+}
+
+
+/* =====================================================
+   CHALLENGE
+===================================================== */
+
+.challenge {
+
+    background:
+        white;
+
+    border:
+        5px solid #ffbd42;
+
+    border-radius:
+        35px;
+
+    padding:
+        40px;
+
+    text-align:
+        center;
+
+    box-shadow:
+        0 10px 25px
+        rgba(190,120,30,.15);
+
+}
+
+.crown {
+
+    font-size:
+        65px;
+
+}
+
+.challenge h2 {
+
+    color:
+        #d52479;
+
+    margin:
+        15px;
+
+}
+
+.challenge p {
+
+    line-height:
+        1.7;
+
+}
+
+
+/* =====================================================
+   NOTES
+===================================================== */
+
+.note {
+
+    background:
+        white;
+
+    border:
+        3px solid #ffd0e5;
+
+    border-radius:
+        25px;
+
+    padding:
+        25px;
+
+    margin-bottom:
+        20px;
+
+    box-shadow:
+        0 7px 18px
+        rgba(190,40,110,.1);
+
+}
+
+.note h3 {
+
+    color:
+        #d52479;
+
+    margin-bottom:
+        10px;
+
+}
+
+.note p,
+.note li {
+
+    line-height:
+        1.7;
+
+}
+
+.note ul {
+
+    margin-left:
+        22px;
+
+}
+
+
+/* =====================================================
+   MOTIVATION
+===================================================== */
+
+.motivation {
+
+    margin-top:
+        35px;
+
+    padding:
+        35px 20px;
+
+    border-radius:
+        30px;
+
+    text-align:
+        center;
+
+    color:
+        white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4fa3,
+            #ff9ccc
+        );
+
+}
+
+.motivation h2 {
+
+    font-size:
+        32px;
+
+    margin-bottom:
+        10px;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+
+    text-align:
+        center;
+
+    padding:
+        35px 20px;
+
+    color:
+        #9b3c6d;
+
+    font-size:
+        14px;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px) {
+
+    .navbar a {
+
+        font-size:
+            11px;
+
+        padding:
+            7px 9px;
+
+    }
+
+    .hero {
+
+        margin:
+            10px;
+
+        min-height:
+            450px;
+
+    }
+
+    .hero h1 {
+
+        font-size:
+            40px;
+
+    }
+
+    .float {
+
+        display:
+            none;
+
+    }
+
+    section {
+
+        padding:
+            45px 14px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+<!-- =====================================================
+     FLOATING DECORATIONS
+===================================================== -->
+
+<div class="float heart1">💗</div>
+
+<div class="float star1">✨</div>
+
+<div class="float plus1">➕</div>
+
+<div class="float star2">⭐</div>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="navbar">
+
+<a href="#home">
+🏠 Home
+</a>
+
+<a href="#welcome">
+💗 Welcome
+</a>
+
+<a href="#learn">
+📖 Learn
+</a>
+
+<a href="#practice">
+🧮 Practise
+</a>
+
+<a href="#play">
+🎮 Play
+</a>
+
+<a href="#challenge">
+🏆 Challenge
+</a>
+
+<a href="#notes">
+📝 Nota
+</a>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HOME
+===================================================== -->
+
+<section id="home">
+
+
+<div class="hero">
+
+
+<div class="number num1">
+3
+</div>
+
+<div class="number num2">
++
+</div>
+
+<div class="number num3">
+5
+</div>
+
+<div class="number num4">
+=
+</div>
+
+
+<div class="bow">
+🎀
+</div>
+
+
+<h1>
+BARBIE MATH WORLD
+</h1>
+
+
+<h2>
+💗 LET'S ADD, PLAY & SHINE! 💗
+</h2>
+
+
+<p>
+
+Welcome, Little Mathematicians! 🌸
+
+<br>
+
+Let's discover the fun world of Addition!
+
+</p>
+
+
+<a
+href="#welcome"
+class="btn">
+
+🎀 LET'S START
+
+</a>
+
+
+</div>
+
+
+
+<div class="white-box">
+
+<h2 class="section-title">
+
+✨ Welcome, Math Star! ✨
+
+</h2>
+
+
+<p>
+
+Are you ready to learn Addition?
+
+<br><br>
+
+Addition means
+<strong>
+putting numbers together
+</strong>
+to find the total.
+
+<br><br>
+
+Let's learn, practise,
+play and shine together! 👑
+
+</p>
+
+
+<div class="example">
+
+
+<h3 style="color:#d52479;">
+
+🎀 Barbie's Example 🎀
+
+</h3>
+
+
+<div class="equation">
+
+3 + 2 = 5
+
+</div>
+
+
+<div class="objects">
+
+💗💗💗
++
+💗💗
+=
+💗💗💗💗💗
+
+</div>
+
+
+<p>
+
+3 hearts + 2 hearts = 5 hearts!
+
+</p>
+
+
+</div>
+
+
+<a
+href="#learn"
+class="btn pink">
+
+📖 START LEARNING
+
+</a>
+
+
+</div>
+
+
+<h2 class="section-title">
+
+💕 Learning Zone 💕
+
+</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<div class="icon">
+📖
+</div>
+
+<h3>
+LEARN
+</h3>
+
+<p>
+Discover what Addition means.
+</p>
+
+<a
+href="#learn"
+class="btn pink">
+
+Learn
+
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">
+🧮
+</div>
+
+<h3>
+PRACTISE
+</h3>
+
+<p>
+Try fun addition questions.
+</p>
+
+<a
+href="#practice"
+class="btn purple">
+
+Practise
+
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">
+🎮
+</div>
+
+<h3>
+PLAY
+</h3>
+
+<p>
+Play Barbie's Math Game.
+</p>
+
+<a
+href="#play"
+class="btn blue">
+
+Play
+
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">
+🏆
+</div>
+
+<h3>
+CHALLENGE
+</h3>
+
+<p>
+Become a Math Star!
+</p>
+
+<a
+href="#challenge"
+class="btn gold">
+
+Challenge
+
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     WELCOME
+===================================================== -->
+
+<section id="welcome">
+
+
+<h2 class="section-title">
+
+💗 Welcome to Addition Class!
+
+</h2>
+
+
+<p class="subtitle">
+
+Let's understand Addition step by step.
+
+</p>
+
+
+<div class="white-box">
+
+
+<h2 style="color:#d52479;">
+
+What is Addition?
+
+</h2>
+
+
+<br>
+
+
+<p>
+
+<strong>
+Addition
+</strong>
+
+means putting two or more
+numbers together to find the total.
+
+</p>
+
+
+<div class="example">
+
+
+<div class="equation">
+
+4 + 3 = 7
+
+</div>
+
+
+<div class="objects">
+
+🌸🌸🌸🌸
++
+🌸🌸🌸
+=
+🌸🌸🌸🌸🌸🌸🌸
+
+</div>
+
+
+<p>
+
+4 flowers + 3 flowers = 7 flowers
+
+</p>
+
+
+</div>
+
+
+<h3 style="color:#d52479;">
+
+💡 Remember!
+
+</h3>
+
+
+<p>
+
+The symbol
+
+<strong>+</strong>
+
+means
+
+<strong>ADD</strong>.
+
+</p>
+
+
+<a
+href="#learn"
+class="btn pink">
+
+NEXT → LEARN
+
+</a>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LEARN
+===================================================== -->
+
+<section id="learn">
+
+
+<h2 class="section-title">
+
+📖 Learn Addition
+
+</h2>
+
+
+<p class="subtitle">
+
+Barbie's 3 easy steps!
+
+</p>
+
+
+<div class="steps">
+
+
+<div class="step">
+
+<div class="step-number">
+1
+</div>
+
+<h3>
+LOOK 👀
+</h3>
+
+<p>
+
+Look carefully at the first number.
+
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<div class="step-number">
+2
+</div>
+
+<h3>
+COUNT 🔢
+</h3>
+
+<p>
+
+Count on using the second number.
+
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<div class="step-number">
+3
+</div>
+
+<h3>
+FIND THE TOTAL ⭐
+</h3>
+
+<p>
+
+The number you reach is your answer.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<div class="example">
+
+
+<h3 style="color:#d52479;">
+
+Let's Try!
+
+</h3>
+
+
+<div class="equation">
+
+5 + 3 = 8
+
+</div>
+
+
+<p>
+
+Start at 5.
+
+<br><br>
+
+Count:
+
+<strong>
+6 → 7 → 8
+</strong>
+
+<br><br>
+
+Therefore:
+
+<strong>
+5 + 3 = 8
+</strong>
+
+🎀
+
+</p>
+
+
+<a
+href="#practice"
+class="btn purple">
+
+🧮 PRACTISE NOW
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     PRACTICE
+===================================================== -->
+
+<section id="practice">
+
+
+<h2 class="section-title">
+
+🧮 Let's Practise!
+
+</h2>
+
+
+<p class="subtitle">
+
+Choose your answer!
+
+</p>
+
+
+
+<!-- QUESTION 1 -->
+
+<div class="question">
+
+
+<h3>
+⭐ QUESTION 1
+</h3>
+
+
+<div class="question-text">
+
+2 + 3 = ?
+
+</div>
+
+
+<div class="answer-buttons">
+
+<a href="#q1wrong">
+4
+</a>
+
+<a href="#q1correct">
+5
+</a>
+
+<a href="#q1wrong">
+6
+</a>
+
+</div>
+
+
+<div
+id="q1correct"
+class="feedback">
+
+🎉 CORRECT!
+
+Amazing, Math Star! 💗
+
+<br>
+
+2 + 3 = 5
+
+</div>
+
+
+<div
+id="q1wrong"
+class="feedback">
+
+💗 Almost!
+
+Try counting the objects again.
+
+</div>
+
+
+</div>
+
+
+
+<!-- QUESTION 2 -->
+
+<div class="question">
+
+
+<h3>
+⭐ QUESTION 2
+</h3>
+
+
+<div class="question-text">
+
+4 + 5 = ?
+
+</div>
+
+
+<div class="answer-buttons">
+
+<a href="#q2wrong">
+8
+</a>
+
+<a href="#q2correct">
+9
+</a>
+
+<a href="#q2wrong">
+10
+</a>
+
+</div>
+
+
+<div
+id="q2correct"
+class="feedback">
+
+🎉 CORRECT!
+
+You are doing great!
+
+<br>
+
+4 + 5 = 9
+
+</div>
+
+
+<div
+id="q2wrong"
+class="feedback">
+
+💗 Try again!
+
+Count 4 and then 5 more.
+
+</div>
+
+
+</div>
+
+
+
+<!-- QUESTION 3 -->
+
+<div class="question">
+
+
+<h3>
+⭐ QUESTION 3
+</h3>
+
+
+<div class="question-text">
+
+6 + 2 = ?
+
+</div>
+
+
+<div class="answer-buttons">
+
+<a href="#q3wrong">
+7
+</a>
+
+<a href="#q3correct">
+8
+</a>
+
+<a href="#q3wrong">
+9
+</a>
+
+</div>
+
+
+<div
+id="q3correct"
+class="feedback">
+
+🎉 CORRECT!
+
+Fantastic, Math Star! ⭐
+
+<br>
+
+6 + 2 = 8
+
+</div>
+
+
+<div
+id="q3wrong"
+class="feedback">
+
+💗 Not quite!
+
+Try counting two more.
+
+</div>
+
+
+</div>
+
+
+<a
+href="#play"
+class="btn blue">
+
+🎮 NEXT → PLAY
+
+</a>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     PLAY
+===================================================== -->
+
+<section id="play">
+
+
+<h2 class="section-title">
+
+🎮 Barbie's Math Game
+
+</h2>
+
+
+<p class="subtitle">
+
+Choose the correct answer!
+
+</p>
+
+
+<div class="game">
+
+
+<h3>
+
+💗 MATH STAR GAME 💗
+
+</h3>
+
+
+<p>
+
+Can you solve this question?
+
+</p>
+
+
+<div class="game-question">
+
+7 + 4 = ?
+
+</div>
+
+
+<div class="answer-buttons">
+
+
+<a href="#gamewrong">
+10
+</a>
+
+
+<a href="#gamecorrect">
+11
+</a>
+
+
+<a href="#gamewrong">
+12
+</a>
+
+
+</div>
+
+
+<div
+id="gamecorrect"
+class="feedback"
+style="
+display:none;
+background:#d9f8e6;
+color:#16834c;
+">
+
+🎉 AMAZING!
+
+7 + 4 = 11
+
+You are a Math Star! 👑
+
+</div>
+
+
+<div
+id="gamewrong"
+class="feedback"
+style="
+display:none;
+background:#ffe1ed;
+color:#c5296d;
+">
+
+💗 Try again!
+
+Remember to count 4 more after 7.
+
+</div>
+
+
+<br>
+
+
+<a
+href="#challenge"
+class="btn gold">
+
+🏆 FINAL CHALLENGE
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     CHALLENGE
+===================================================== -->
+
+<section id="challenge">
+
+
+<h2 class="section-title">
+
+🏆 Barbie's Math Challenge
+
+</h2>
+
+
+<p class="subtitle">
+
+Are you ready to become a Math Star?
+
+</p>
+
+
+<div class="challenge">
+
+
+<div class="crown">
+👑
+</div>
+
+
+<h2>
+MATH STAR CHALLENGE
+</h2>
+
+
+<p>
+
+Complete the questions below!
+
+</p>
+
+
+<br>
+
+
+<h3 style="color:#d52479;">
+⭐ Challenge 1
+</h3>
+
+<p>
+8 + 5 = ?
+</p>
+
+
+<div class="answer-buttons">
+
+<a href="#c1wrong">
+12
+</a>
+
+<a href="#c1correct">
+13
+</a>
+
+<a href="#c1wrong">
+14
+</a>
+
+</div>
+
+
+<div
+id="c1correct"
+class="feedback">
+
+🎉 Correct!
+
+8 + 5 = 13
+
+</div>
+
+
+<div
+id="c1wrong"
+class="feedback">
+
+💗 Keep trying!
+
+</div>
+
+
+<br><br>
+
+
+<h3 style="color:#d52479;">
+⭐⭐ Challenge 2
+</h3>
+
+<p>
+9 + 6 = ?
+</p>
+
+
+<div class="answer-buttons">
+
+<a href="#c2wrong">
+14
+</a>
+
+<a href="#c2correct">
+15
+</a>
+
+<a href="#c2wrong">
+16
+</a>
+
+</div>
+
+
+<div
+id="c2correct"
+class="feedback">
+
+🎉 Correct!
+
+9 + 6 = 15
+
+</div>
+
+
+<div
+id="c2wrong"
+class="feedback">
+
+💗 Almost!
+
+Try counting again.
+
+</div>
+
+
+<br>
+
+
+<div class="motivation">
+
+<h2>
+🎀 YOU CAN DO IT! 🎀
+</h2>
+
+
+<p>
+
+Small Steps + Big Progress
+= Math Star! 👑
+
+</p>
+
+
+<br>
+
+
+<p>
+
+⭐ ⭐ ⭐ ⭐ ⭐
+
+</p>
+
+</div>
+
+
+<br>
+
+
+<a
+href="#notes"
+class="btn pink">
+
+📝 VIEW NOTES
+
+</a>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     NOTES
+===================================================== -->
+
+<section id="notes">
+
+
+<h2 class="section-title">
+
+📝 Barbie's Math Notes
+
+</h2>
+
+
+<p class="subtitle">
+
+Remember these important ideas!
+
+</p>
+
+
+
+<div class="note">
+
+
+<h3>
+➕ Addition Symbol
+</h3>
+
+
+<p>
+
+The symbol
+
+<strong>+</strong>
+
+means
+
+<strong>add</strong>.
+
+</p>
+
+</div>
+
+
+
+<div class="note">
+
+
+<h3>
+🔢 Example
+</h3>
+
+
+<p>
+
+<strong>
+3 + 4 = 7
+</strong>
+
+<br><br>
+
+3 and 4 are the numbers we add.
+
+7 is the total.
+
+</p>
+
+</div>
+
+
+
+<div class="note">
+
+
+<h3>
+🎀 Steps to Add
+</h3>
+
+
+<ul>
+
+<li>
+Look at the first number.
+</li>
+
+<li>
+Count on the second number.
+</li>
+
+<li>
+Find the total.
+</li>
+
+<li>
+Check your answer.
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="note">
+
+
+<h3>
+💡 Barbie's Math Tip
+</h3>
+
+
+<p>
+
+If you are unsure,
+
+use objects, draw pictures,
+or count with your fingers.
+
+<br><br>
+
+<strong>
+
+There is always a way to solve it! 💗
+
+</strong>
+
+</p>
+
+</div>
+
+
+<a
+href="#home"
+class="btn pink">
+
+🎀 BACK TO HOME
+
+</a>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<div class="footer">
+
+🎀
+
+<strong>
+BARBIE MATH WORLD
+</strong>
+
+🎀
+
+<br><br>
+
+Learn • Practise • Play • Challenge
+
+<br><br>
+
+💗 Addition is Fun! 💗
+
+</div>
+
+
+</div>
+
+</body>
+</html>
